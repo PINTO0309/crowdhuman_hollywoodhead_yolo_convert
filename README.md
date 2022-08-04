@@ -87,3 +87,7 @@ drwxr-xr-x 2 vscode vscode 2048000 Aug  4 11:27 crowdhuman-640x480
 drwxrwxr-x 3 vscode vscode    4096 Aug  4 09:34 raw
 -rw-rw-r-- 1 vscode vscode    1426 Aug  4 08:24 verify_txts.py
 ```
+### 2-5. Exit Docker
+```bash
+$ exit
+```
