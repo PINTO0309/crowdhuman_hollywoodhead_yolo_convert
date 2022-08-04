@@ -5,6 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
     && apt-get install -y \
         nano python3-pip curl zip unzip sudo tree libgl1-mesa-dev \
+        libglib2.0-0 \
     && sed -i 's/# set linenumbers/set linenumbers/g' /etc/nanorc \
     && apt clean \
     && rm -rf /var/lib/apt/lists/*
