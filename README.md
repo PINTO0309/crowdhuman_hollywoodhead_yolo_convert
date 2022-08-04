@@ -121,16 +121,16 @@ hyp.scratch.p6.yaml
 hyp.scratch.tiny.yaml
 
 # copy cfg
-$ cp cfg/training/yolov7.yaml cfg/training/yolov7_crowdhuman_head_only.yaml
+$ cp cfg/training/yolov7.yaml cfg/training/yolov7_crowdhuman_head.yaml
 # change number of classes
-$ sed -i -e 's/nc: 80/nc: 1/g' cfg/training/yolov7_crowdhuman_head_only.yaml
+$ sed -i -e 's/nc: 80/nc: 1/g' cfg/training/yolov7_crowdhuman_head.yaml
 # change anchors
 $ sed -i -e \
-'s/[12,16, 19,36, 40,28]/[8,9, 14,18, 21,29]/g' cfg/training/yolov7_crowdhuman_head_only.yaml
+'s/[12,16, 19,36, 40,28]/[8,9, 14,18, 21,29]/g' cfg/training/yolov7_crowdhuman_head.yaml
 $ sed -i -e \
-'s/[36,75, 76,55, 72,146]/[30,42, 42,57, 58,79]/g' cfg/training/yolov7_crowdhuman_head_only.yaml
+'s/[36,75, 76,55, 72,146]/[30,42, 42,57, 58,79]/g' cfg/training/yolov7_crowdhuman_head.yaml
 $ sed -i -e \
-'s/[142,110, 192,243, 459,401]/[79,113, 115,167, 159,303]/g' cfg/training/yolov7_crowdhuman_head_only.yaml
+'s/[142,110, 192,243, 459,401]/[79,113, 115,167, 159,303]/g' cfg/training/yolov7_crowdhuman_head.yaml
 
 # Single GPU YOLOv7 training
 # --name: save to project/name
