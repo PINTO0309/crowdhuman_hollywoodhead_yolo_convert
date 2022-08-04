@@ -122,15 +122,32 @@ hyp.scratch.tiny.yaml
 
 # copy cfg
 $ cp cfg/training/yolov7.yaml cfg/training/yolov7_crowdhuman_head.yaml
+$ cp cfg/training/yolov7-tiny.yaml cfg/training/yolov7-tiny_crowdhuman_head.yaml
+
 # change number of classes
 $ sed -i -e 's/nc: 80/nc: 1/g' cfg/training/yolov7_crowdhuman_head.yaml
+$ sed -i -e 's/nc: 80/nc: 1/g' cfg/training/yolov7-tiny_crowdhuman_head.yaml
+
 # change anchors
 $ sed -i -e \
-'s/[12,16, 19,36, 40,28]/[8,9, 14,18, 21,29]/g' cfg/training/yolov7_crowdhuman_head.yaml
+'s/[12,16, 19,36, 40,28]/[8,9, 14,18, 21,29]/g' \
+cfg/training/yolov7_crowdhuman_head.yaml
 $ sed -i -e \
-'s/[36,75, 76,55, 72,146]/[30,42, 42,57, 58,79]/g' cfg/training/yolov7_crowdhuman_head.yaml
+'s/[36,75, 76,55, 72,146]/[30,42, 42,57, 58,79]/g' \
+cfg/training/yolov7_crowdhuman_head.yaml
 $ sed -i -e \
-'s/[142,110, 192,243, 459,401]/[79,113, 115,167, 159,303]/g' cfg/training/yolov7_crowdhuman_head.yaml
+'s/[142,110, 192,243, 459,401]/[79,113, 115,167, 159,303]/g' \
+cfg/training/yolov7_crowdhuman_head.yaml
+
+$ sed -i -e \
+'s/[10,13, 16,30, 33,23]/[8,9, 14,18, 21,29]/g' \
+cfg/training/yolov7-tiny_crowdhuman_head.yaml
+$ sed -i -e \
+'s/[30,61, 62,45, 59,119]/[30,42, 42,57, 58,79]/g' \
+cfg/training/yolov7-tiny_crowdhuman_head.yaml
+$ sed -i -e \
+'s/[116,90, 156,198, 373,326]/[79,113, 115,167, 159,303]/g' \
+cfg/training/yolov7-tiny_crowdhuman_head.yaml
 
 # Single GPU YOLOv7 training
 # --name: save to project/name
@@ -151,7 +168,7 @@ $ python train.py \
 --batch-size 32 \
 --data data/crowdhuman.yaml \
 --img 640 480 \
---cfg cfg/training/yolov7.yaml \
+--cfg cfg/training/yolov7_crowdhuman_head.yaml \
 --weights '' \
 --name yolov7 \
 --hyp data/hyp.scratch.p5.yaml
@@ -164,7 +181,7 @@ $ python train.py \
 --batch-size 32 \
 --data data/crowdhuman.yaml \
 --img 640 480 \
---cfg cfg/training/yolov7-tiny.yaml \
+--cfg cfg/training/yolov7-tiny_crowdhuman_head.yaml \
 --weights '' \
 --name yolov7_tiny \
 --hyp data/hyp.scratch.tiny.yaml
