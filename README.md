@@ -200,3 +200,17 @@ $ python train.py \
 --name yolov7_tiny \
 --hyp data/hyp.scratch.tiny.yaml
 ```
+### 5-3. Tensorboard
+Start a different terminal from the one in which you are running the training and execute the following commands.
+```bash
+$ cd yolov7
+$ docker run --rm -it \
+-v `pwd`:/home/vscode \
+--shm-size 64g \
+--net host \
+yolov7:latest
+
+$ tensorboard --logdir runs/train
+```
+Access `http://localhost:6006` from your browser.
+![image](https://user-images.githubusercontent.com/33194443/182865555-c25939a0-5c64-464e-a3f3-1788e6b856bf.png)
