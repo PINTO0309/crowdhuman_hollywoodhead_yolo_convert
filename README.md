@@ -156,7 +156,7 @@ $ docker build -t yolov7 -f Dockerfile.yolov7 .
 ```
 ### 5-2. Training YOLOv7
 ```bash
-$ docker run --rm -it \
+$ docker run --rm -it --gpus all \
 -v `pwd`:/home/vscode \
 --shm-size 64g \
 yolov7:latest
