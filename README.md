@@ -151,10 +151,15 @@ cfg/training/yolov7-tiny_crowdhuman_head.yaml
 $ sed -i -e \
 's/\[116,90, 156,198, 373,326\]/\[79,113, 115,167, 159,303\]/g' \
 cfg/training/yolov7-tiny_crowdhuman_head.yaml
+
+$ docker build -t yolov7 -f Dockerfile.yolov7 .
 ```
 ### 5-2. Training YOLOv7
 ```bash
-$ docker build -t yolov7 -f Dockerfile.yolov7 .
+$ docker run --rm -it \
+-v `pwd`:/home/vscode \
+--shm-size 64g \
+yolov7:latest
 
 # Single GPU YOLOv7 training
 # --name: save to project/name
