@@ -121,6 +121,7 @@ hyp.scratch.p6.yaml
 hyp.scratch.tiny.yaml
 
 # Single GPU YOLOv7 training
+# --name: save to project/name
 $ python train.py \
 --workers 8 \
 --device 0 \
@@ -133,6 +134,7 @@ $ python train.py \
 --hyp data/hyp.scratch.p5.yaml
 
 # Single GPU YOLOv7-tiny training
+# --name: save to project/name
 $ python train.py \
 --workers 8 \
 --device 0 \
