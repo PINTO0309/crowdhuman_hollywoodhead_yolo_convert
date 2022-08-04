@@ -1,7 +1,7 @@
 # crowdhuman_hollywoodhead_coco_convert
 Generates a head-only dataset in COCO format. The labels included in the CrowdHuman dataset are Head and FullBody, but ignore FullBody.
 
-## Advance preparation
+## 1. Advance preparation
 ```bash
 $ pip install -U \
 pip \
@@ -15,13 +15,13 @@ threadpoolctl==3.1.0 \
 $ git clone https://github.com/PINTO0309/crowdhuman_hollywoodhead_coco_convert.git
 $ cd crowdhuman_hollywoodhead_coco_convert
 ```
-## CrowdHuman Single to YOLO(COCO/YOLOv7) format
-### Download CrowdHuman Datasets
+## 2. CrowdHuman Single to YOLO(COCO/YOLOv7) format
+### 2-1. Download CrowdHuman Datasets
 ```bash
 $ cd 01_crowhuman2yolo
 $ ./crowdhuman_dataset_download.sh
 ```
-### Structure
+### 2-2. Structure
 ```bash
 $ tree
 .
@@ -42,7 +42,8 @@ $ tree
 
 2 directories, 12 files
 ```
-### Prepare Data e.g. 4:3
+### 2-3. Prepare Data
+#### 2-3-1. Prepare Data e.g. 4:3
 ```bash
 $ cd data
 # {width}x{height}
@@ -69,7 +70,7 @@ resized bbox width/height clusters are:
 anchors = 8,9,  14,18,  21,29,  30,42,  42,57,  58,79,  79,113,  115,167,  159,303
 ** Done.
 ```
-### Prepare Data e.g. 16:9
+#### 2-3-2. Prepare Data e.g. 16:9
 ```bash
 $ cd data
 # {width}x{height}
