@@ -106,7 +106,7 @@ $ cat << 'EOT' > data/crowdhuman.yaml
 train: ./data/crowdhuman-640x480/train.txt
 val: ./data/crowdhuman-640x480/test.txt
 # number of classes
-nc: 2
+nc: 1
 # class names
 names: ['head']
 EOT
