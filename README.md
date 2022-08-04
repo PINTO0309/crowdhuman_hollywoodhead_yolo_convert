@@ -120,6 +120,11 @@ hyp.scratch.p5.yaml
 hyp.scratch.p6.yaml
 hyp.scratch.tiny.yaml
 
+# copy cfg
+$ cp cfg/training/yolov7.yaml cfg/training/yolov7_crowdhuman_head_only.yaml
+# change number of classes
+$ sed -i -e 's/nc: 80/nc: 1/g' cfg/training/yolov7_crowdhuman_head_only.yaml
+
 # Single GPU YOLOv7 training
 # --name: save to project/name
 # p5 (e.g. coco): 
