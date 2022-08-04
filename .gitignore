@@ -1,0 +1,4 @@
+*.zip
+*.odgt
+crowdhuman-*x*/
+01_crowhuman2yolo/data/raw/Images/
