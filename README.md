@@ -34,9 +34,16 @@ $ tree
 
 2 directories, 12 files
 ```
-### Prepare Data
+### Prepare Data 4:3
 ```bash
 $ cd data
 # {width}x{height}
-$ ./prepare_data.sh 640x640
+$ ./prepare_data.sh 640x480
+```
+```
+### Prepare Data 16:9
+```bash
+$ cd data
+# {width}x{height}
+$ ./prepare_data.sh 640x384
 ```
