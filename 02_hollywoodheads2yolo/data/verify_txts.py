@@ -14,10 +14,10 @@ args = parser.parse_args()
 
 if random.random() < 0.5:
     print('Verifying test.txt')
-    jpgs_path = Path(f'crowdhuman-{args.dim}/test.txt')
+    jpgs_path = Path(f'hollywoodheads-{args.dim}/test.txt')
 else:
     print('Verifying train.txt')
-    jpgs_path = Path(f'crowdhuman-{args.dim}/train.txt')
+    jpgs_path = Path(f'hollywoodheads-{args.dim}/train.txt')
 
 with open(jpgs_path.as_posix(), 'r') as f:
     jpg_names = [l.strip()[5:] for l in f.readlines()]

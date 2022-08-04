@@ -1,0 +1,5 @@
+classes = 1
+train   = data/hollywoodheads-{width}x{height}/train.txt
+valid   = data/hollywoodheads-{width}x{height}/test.txt
+names   = data/hollywoodheads.names
+backup  = backup/
