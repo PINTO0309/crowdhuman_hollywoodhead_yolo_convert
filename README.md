@@ -15,7 +15,7 @@ threadpoolctl==3.1.0 \
 $ git clone https://github.com/PINTO0309/crowdhuman_hollywoodhead_coco_convert.git
 $ cd crowdhuman_hollywoodhead_coco_convert
 ```
-## CrowdHuman to YOLO(COCO/YOLOv7) format
+## CrowdHuman Single to YOLO(COCO/YOLOv7) format
 ### Download CrowdHuman Datasets
 ```bash
 $ cd 01_crowhuman2yolo
