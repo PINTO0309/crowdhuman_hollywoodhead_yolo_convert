@@ -34,5 +34,5 @@ $ tree
 ```
 ### Prepare Data
 ```bash
-./prepare_data.sh 608x608
+./prepare_data.sh 640x640
 ```
