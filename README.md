@@ -159,6 +159,7 @@ $ docker build -t yolov7 -f Dockerfile.yolov7 .
 $ docker run --rm -it --gpus all \
 -v `pwd`:/home/vscode \
 --shm-size 64g \
+--net host \
 yolov7:latest
 
 # Single GPU YOLOv7 training
