@@ -35,5 +35,6 @@ $ tree
 ### Prepare Data
 ```bash
 cd data
+# {width}x{height}
 ./prepare_data.sh 640x640
 ```
