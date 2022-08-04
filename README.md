@@ -151,10 +151,16 @@ cfg/training/yolov7-tiny_crowdhuman_head.yaml
 $ sed -i -e \
 's/\[116,90, 156,198, 373,326\]/\[79,113, 115,167, 159,303\]/g' \
 cfg/training/yolov7-tiny_crowdhuman_head.yaml
+
+$ docker build -t yolov7 -f Dockerfile.yolov7 .
 ```
 ### 5-2. Training YOLOv7
 ```bash
-$ docker build -t yolov7 -f Dockerfile.yolov7 .
+$ docker run --rm -it --gpus all \
+-v `pwd`:/home/vscode \
+--shm-size 64g \
+--net host \
+yolov7:latest
 
 # Single GPU YOLOv7 training
 # --name: save to project/name
@@ -186,7 +192,7 @@ $ python train.py \
 $ python train.py \
 --workers 8 \
 --device 0 \
---batch-size 32 \
+--batch-size 40 \
 --data data/crowdhuman.yaml \
 --img-size 640 640 \
 --cfg cfg/training/yolov7-tiny_crowdhuman_head.yaml \
@@ -194,3 +200,18 @@ $ python train.py \
 --name yolov7_tiny \
 --hyp data/hyp.scratch.tiny.yaml
 ```
+### 5-3. Tensorboard
+Start a different terminal from the one in which you are running the training and execute the following commands.
+```bash
+$ cd yolov7
+$ docker run --rm -it \
+-v `pwd`:/home/vscode \
+--shm-size 64g \
+--net host \
+yolov7:latest
+
+$ tensorboard --logdir runs/train
+```
+Access `http://localhost:6006` from your browser.
+![image](https://user-images.githubusercontent.com/33194443/182865555-c25939a0-5c64-464e-a3f3-1788e6b856bf.png)
+![image](https://user-images.githubusercontent.com/33194443/182867133-eb21d3fd-e7aa-4235-9450-95d08339ab2d.png)
