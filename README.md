@@ -55,12 +55,12 @@ Archive:  CrowdHuman_train03.zip
 Archive:  CrowdHuman_val.zip
 ** Create the crowdhuman-640x480/ subdirectory
 ** Generate yolo txt files
-@@@@@@@@@@@@@@@@ Processing Sets: test
-@@@@@@@@@@@@@@@@ Processed Images: 4361
-@@@@@@@@@@@@@@@@ Processing Sets: train
-@@@@@@@@@@@@@@@@ Processed Images: 14962
-@@@@@@@@@@@@@@@@ Processing .data
-@@@@@@@@@@@@@@@@ Processed .data
+** Processing Sets: test
+** Processed Images: 4361
+** Processing Sets: train
+** Processed Images: 14962
+** Processing .data
+** Processed .data
 
 ** for yolov7-640x480,
 resized bbox width/height clusters are:
