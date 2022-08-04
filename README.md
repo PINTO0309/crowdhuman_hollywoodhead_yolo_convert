@@ -93,4 +93,11 @@ $ exit
 ```
 
 ## 5. Train on CrowdHuman Dataset
+```bash
+$ cd ..
+$ git clone https://github.com/WongKinYiu/yolov7.git
+$ cd yolov7
+$ git checkout b8956dd5a5bcbb81c92944545ca03390c22a695f
 
+$ mv ../crowdhuman_hollywoodhead_coco_convert/01_crowdhuman2yolo/data/crowdhuman-640x480 data/
+```
