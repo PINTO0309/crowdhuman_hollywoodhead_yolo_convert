@@ -14,7 +14,7 @@ crowdhuman_hollywoodhead_coco_convert:latest
 ## 2. CrowdHuman Single to YOLO(COCO/YOLOv7) format
 ### 2-1. Download CrowdHuman Datasets
 ```bash
-$ cd 01_crowhuman2yolo
+$ cd 01_crowdhuman2yolo
 $ ./crowdhuman_dataset_download.sh
 ```
 ### 2-2. Structure
