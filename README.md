@@ -175,7 +175,7 @@ yolov7:latest
 #  - [ 96,68,  86,152,  180,137 ]  # P4/16
 #  - [ 140,301,  303,264,  238,542 ]  # P5/32
 #  - [ 436,615,  739,380,  925,792 ]  # P6/64
-# --img-size: [train test] image sizes. e.g. 640 480 -> train:640x640, test:480x480
+# --img-size: [train test] image sizes. e.g. 640 480 -> train:640, test:480
 $ python train.py \
 --workers 8 \
 --device 0 \
