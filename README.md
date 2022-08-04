@@ -165,7 +165,7 @@ cfg/training/yolov7-tiny_crowdhuman_head.yaml
 $ python train.py \
 --workers 8 \
 --device 0 \
---batch-size 16 \
+--batch-size 8 \
 --data data/crowdhuman.yaml \
 --img 640 480 \
 --cfg cfg/training/yolov7_crowdhuman_head.yaml \
