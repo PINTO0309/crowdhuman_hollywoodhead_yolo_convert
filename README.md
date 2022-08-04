@@ -100,4 +100,14 @@ $ cd yolov7
 $ git checkout b8956dd5a5bcbb81c92944545ca03390c22a695f
 
 $ mv ../crowdhuman_hollywoodhead_coco_convert/01_crowdhuman2yolo/data/crowdhuman-640x480 data/
+
+$ cat << 'EOT' > data/crowdhuman.yaml
+# path to train.txt or test.txt
+train: ./data/crowdhuman-640x480/train.txt
+val: ./data/crowdhuman-640x480/test.txt
+# number of classes
+nc: 2
+# class names
+names: ['head']
+EOT
 ```
