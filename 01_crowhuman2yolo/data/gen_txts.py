@@ -139,12 +139,14 @@ def main():
     process('test', 'raw/annotation_val.odgt', output_dir)
     process('train', 'raw/annotation_train.odgt', output_dir)
 
+    print(f'@@@@@@@@@@@@@@@@ Processing .data')
     with open('crowdhuman-%s.data' % args.dim, 'w') as f:
         f.write("""classes = 1
 train   = data/crowdhuman-%s/train.txt
 valid   = data/crowdhuman-%s/test.txt
 names   = data/crowdhuman.names
 backup  = backup/\n""" % (args.dim, args.dim))
+    print(f'@@@@@@@@@@@@@@@@ Processed .data')
 
     if DO_KMEANS:
         try:
