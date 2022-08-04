@@ -91,3 +91,6 @@ drwxrwxr-x 3 vscode vscode    4096 Aug  4 09:34 raw
 ```bash
 $ exit
 ```
+
+## 5. Train on CrowdHuman Dataset
+
