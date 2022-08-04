@@ -131,7 +131,7 @@ def main():
     if INPUT_WIDTH % 32 != 0 or INPUT_HEIGHT % 32 != 0:
         raise SystemExit('ERROR: bad spec of input dim (%s)' % args.dim)
 
-    output_dir = Path('crowdhuman-%s' % args.dim)
+    output_dir = Path('hollywoodheads-%s' % args.dim)
     if not output_dir.is_dir():
         raise SystemExit('ERROR: %s does not exist.' % output_dir.as_posix())
 
