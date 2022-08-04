@@ -47,6 +47,27 @@ $ tree
 $ cd data
 # {width}x{height}
 $ ./prepare_data.sh 640x480
+
+** Unzip dataset files
+Archive:  CrowdHuman_train01.zip
+Archive:  CrowdHuman_train02.zip
+Archive:  CrowdHuman_train03.zip
+Archive:  CrowdHuman_val.zip
+** Create the crowdhuman-640x480/ subdirectory
+** Generate yolo txt files
+@@@@@@@@@@@@@@@@ Processing Sets: test
+@@@@@@@@@@@@@@@@ Processed Images: 4361
+@@@@@@@@@@@@@@@@ Processing Sets: train
+@@@@@@@@@@@@@@@@ Processed Images: 14962
+@@@@@@@@@@@@@@@@ Processing .data
+@@@@@@@@@@@@@@@@ Processed .data
+
+** for yolov7-640x480,
+resized bbox width/height clusters are:
+(8.03, 9.75) (14.27, 18.82) (21.57, 29.40) (30.31, 42.13) (42.60, 57.28)
+(58.03, 79.86) (79.73, 113.81) (115.23, 167.94) (159.88, 303.94)
+anchors = 8,9,  14,18,  21,29,  30,42,  42,57,  58,79,  79,113,  115,167,  159,303
+** Done.
 ```
 ### Prepare Data e.g. 16:9
 ```bash
