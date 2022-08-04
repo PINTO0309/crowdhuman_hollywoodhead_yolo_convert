@@ -39,7 +39,7 @@ BBOX_WHS = []  # keep track of bbox width/height with respect to 640x640
 
 def image_shape(ID, image_dir):
     assert image_dir is not None
-    jpg_path = image_dir / ('%s.jpg' % ID)
+    jpg_path = image_dir / (f'{ID}.jpg')
     img = cv2.imread(jpg_path.as_posix())
     return img.shape
 
@@ -64,7 +64,7 @@ def txt_line(cls, bbox, img_w, img_h):
         cy = (y + h / 2.) / img_h
         nw = float(w) / img_w
         nh = float(h) / img_h
-        return '%d %.6f %.6f %.6f %.6f\n' % (cls, cx, cy, nw, nh)
+        return f'{int(cls)} {cx:.6f} {cy:.6f} {nw:.6f} {nh:.6f}\n'
 
 
 def process(set_='test', annotation_filename='raw/annotation_val.odgt', output_dir=None):
@@ -78,10 +78,9 @@ def process(set_='test', annotation_filename='raw/annotation_val.odgt', output_d
         for raw_anno in fanno.readlines():
             anno = json.loads(raw_anno)
             ID = anno['ID']  # e.g. '273271,c9db000d5146c15'
-            # print('Processing ID: %s' % ID)
             img_h, img_w, img_c = image_shape(ID, output_dir)
             assert img_c == 3  # should be a BGR image
-            txt_path = output_dir / ('%s.txt' % ID)
+            txt_path = output_dir / (f'{ID}.txt')
             # write a txt for each image
             line_count = 0
             with open(txt_path.as_posix(), 'w') as ftxt:
@@ -100,14 +99,14 @@ def process(set_='test', annotation_filename='raw/annotation_val.odgt', output_d
                         #     ftxt.write(line)
                         pass # ignore non-head
             if line_count > 0:
-                jpgs.append('data/%s/%s.jpg' % (output_dir, ID))
+                jpgs.append(f'data/{output_dir}/{ID}.jpg')
                 raw_anno_count += 1
     print(f'** Processed Images: {raw_anno_count}')
     # write the 'data/crowdhuman/train.txt' or 'data/crowdhuman/test.txt'
-    set_path = output_dir / ('%s.txt' % set_)
+    set_path = output_dir / (f'{set_}.txt')
     with open(set_path.as_posix(), 'w') as fset:
         for jpg in jpgs:
-            fset.write('%s\n' % jpg)
+            fset.write(f'{jpg}\n')
 
 
 def rm_txts(output_dir):
@@ -126,26 +125,26 @@ def main():
 
     dim_split = args.dim.split('x')
     if len(dim_split) != 2:
-        raise SystemExit('ERROR: bad spec of input dim (%s)' % args.dim)
+        raise SystemExit(f'ERROR: bad spec of input dim ({args.dim})')
     INPUT_WIDTH, INPUT_HEIGHT = int(dim_split[0]), int(dim_split[1])
     if INPUT_WIDTH % 32 != 0 or INPUT_HEIGHT % 32 != 0:
-        raise SystemExit('ERROR: bad spec of input dim (%s)' % args.dim)
+        raise SystemExit(f'ERROR: bad spec of input dim ({args.dim})')
 
-    output_dir = Path('hollywoodheads-%s' % args.dim)
+    output_dir = Path(f'hollywoodheads-{args.dim}')
     if not output_dir.is_dir():
-        raise SystemExit('ERROR: %s does not exist.' % output_dir.as_posix())
+        raise SystemExit(f'ERROR: {output_dir.as_posix()} does not exist.')
 
     rm_txts(output_dir)
     process('test', 'raw/annotation_val.odgt', output_dir)
     process('train', 'raw/annotation_train.odgt', output_dir)
 
     print(f'** Processing .data')
-    with open('hollywoodheads-%s.data' % args.dim, 'w') as f:
-        f.write("""classes = 1
-train   = data/hollywoodheads-%s/train.txt
-valid   = data/hollywoodheads-%s/test.txt
+    with open(f'hollywoodheads-{args.dim}.data', 'w') as f:
+        f.write(f"""classes = 1
+train   = data/hollywoodheads-{args.dim}/train.txt
+valid   = data/hollywoodheads-{args.dim}/test.txt
 names   = data/hollywoodheads.names
-backup  = backup/\n""" % (args.dim, args.dim))
+backup  = backup/\n""")
     print(f'** Processed .data')
 
     if DO_KMEANS:
@@ -158,11 +157,11 @@ backup  = backup/\n""" % (args.dim, args.dim))
             kmeans = KMeans(n_clusters=KMEANS_CLUSTERS, random_state=0).fit(X)
             centers = kmeans.cluster_centers_
             centers = centers[centers[:, 0].argsort()]  # sort by bbox w
-            print('\n** for yolov7-%dx%d, ' % (INPUT_WIDTH, INPUT_HEIGHT), end='')
+            print(f'\n** for yolov7-{int(INPUT_WIDTH)}x{int(INPUT_HEIGHT)}, ', end='')
             print('resized bbox width/height clusters are: ', end='')
-            print(' '.join(['(%.2f, %.2f)' % (c[0], c[1]) for c in centers]))
+            print(' '.join([f'({c[0]:.2f}, {c[1]:.2f})' for c in centers]))
             print('\nanchors = ', end='')
-            print(',  '.join(['%d,%d' % (int(c[0]), int(c[1])) for c in centers]))
+            print(',  '.join([f'{int(c[0])},{int(c[1])}' for c in centers]))
 
 
 if __name__ == '__main__':

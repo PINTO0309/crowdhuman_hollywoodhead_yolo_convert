@@ -78,7 +78,6 @@ def process(set_='test', annotation_filename='raw/annotation_val.odgt', output_d
         for raw_anno in fanno.readlines():
             anno = json.loads(raw_anno)
             ID = anno['ID']  # e.g. '273271,c9db000d5146c15'
-            # print('Processing ID: %s' % ID)
             img_h, img_w, img_c = image_shape(ID, output_dir)
             assert img_c == 3  # should be a BGR image
             txt_path = output_dir / (f'{ID}.txt')
@@ -158,7 +157,7 @@ backup  = backup/\n""")
             kmeans = KMeans(n_clusters=KMEANS_CLUSTERS, random_state=0).fit(X)
             centers = kmeans.cluster_centers_
             centers = centers[centers[:, 0].argsort()]  # sort by bbox w
-            print('\n** for yolov7-%dx%d, ' % (INPUT_WIDTH, INPUT_HEIGHT), end='')
+            print(f'\n** for yolov7-{int(INPUT_WIDTH)}x{int(INPUT_HEIGHT)}, ', end='')
             print('resized bbox width/height clusters are: ', end='')
             print(' '.join([f'({c[0]:.2f}, {c[1]:.2f})' for c in centers]))
             print('\nanchors = ', end='')
