@@ -1,0 +1,26 @@
+FROM nvcr.io/nvidia/pytorch:21.08-py3
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update \
+    && apt-get install -y \
+        nano python3-pip curl zip unzip sudo tree libgl1-mesa-dev \
+        libglib2.0-0 htop screen libgl1-mesa-glx \
+    && sed -i 's/# set linenumbers/set linenumbers/g' /etc/nanorc \
+    && apt clean \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install -U pip && \
+    pip3 install -U \
+    seaborn \
+    thop
+
+ENV USERNAME=vscode
+RUN echo "root:root" | chpasswd \
+    && adduser --disabled-password --gecos "" "${USERNAME}" \
+    && echo "${USERNAME}:${USERNAME}" | chpasswd \
+    && echo "%${USERNAME}    ALL=(ALL)   NOPASSWD:    ALL" >> /etc/sudoers.d/${USERNAME} \
+    && chmod 0440 /etc/sudoers.d/${USERNAME}
+USER ${USERNAME}
+WORKDIR /home/${USERNAME}
+
