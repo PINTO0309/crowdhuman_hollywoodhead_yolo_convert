@@ -6,6 +6,10 @@ Generates a head-only dataset in COCO format. The labels included in the CrowdHu
 $ git clone https://github.com/PINTO0309/crowdhuman_hollywoodhead_coco_convert.git
 $ cd crowdhuman_hollywoodhead_coco_convert
 $ docker build -t crowdhuman_hollywoodhead_coco_convert .
+
+$ docker run -it --rm \
+-v `pwd`:/home/vscode \
+crowdhuman_hollywoodhead_coco_convert:latest
 ```
 ## 2. CrowdHuman Single to YOLO(COCO/YOLOv7) format
 ### 2-1. Download CrowdHuman Datasets
