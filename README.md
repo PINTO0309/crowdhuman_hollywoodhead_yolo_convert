@@ -110,4 +110,13 @@ nc: 2
 # class names
 names: ['head']
 EOT
+
+$ ls -l data/
+coco.yaml
+crowdhuman-640x480
+crowdhuman.yaml
+hyp.scratch.custom.yaml
+hyp.scratch.p5.yaml
+hyp.scratch.p6.yaml
+hyp.scratch.tiny.yaml
 ```
