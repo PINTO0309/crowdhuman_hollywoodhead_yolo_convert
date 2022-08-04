@@ -3,7 +3,7 @@ Generates a head-only dataset in COCO format. The labels included in the CrowdHu
 
 ## Advance preparation
 ```bash
-$ pip install -U pip gdown tree scikit-learn==1.1.1 opencv-python==4.6.0 --user
+$ pip install -U pip gdown tree numpy==1.23.1 scikit-learn==1.1.1 opencv-python==4.6.0 --user
 $ git clone https://github.com/PINTO0309/crowdhuman_hollywoodhead_coco_convert.git
 $ cd crowdhuman_hollywoodhead_coco_convert
 ```
