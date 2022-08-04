@@ -2,7 +2,7 @@
 
 ## Advance preparation
 ```bash
-$ pip install gdown tree --user
+$ pip install gdown tree scikit-learn==1.1.1 --user
 $ git clone https://github.com/PINTO0309/crowdhuman_hollywoodhead_coco_convert.git
 $ cd crowdhuman_hollywoodhead_coco_convert
 ```
