@@ -101,7 +101,7 @@ def process(set_='test', annotation_filename='raw/annotation_val.odgt', output_d
                         continue # ignore non-head
             if line_count > 0:
                 jpgs.append('data/%s/%s.jpg' % (output_dir, ID))
-                raw_anno_count + 1
+                raw_anno_count += 1
     print(f'@@@@@@@@@@@@@@@@ Processed Images: {raw_anno_count}')
     # write the 'data/crowdhuman/train.txt' or 'data/crowdhuman/test.txt'
     set_path = output_dir / ('%s.txt' % set_)

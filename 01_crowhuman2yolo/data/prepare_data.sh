@@ -18,20 +18,6 @@ fi
 
 pushd $(dirname $0)/raw > /dev/null
 
-get_file()
-{
-  # do download only if the file does not exist
-  if [[ -f $2 ]];  then
-    echo Skipping $2
-  else
-    echo Downloading $2...
-    python3 -m gdown.cli $1
-  fi
-}
-
-echo "** Download dataset files"
-
-
 # unzip image files (ignore CrowdHuman_test.zip for now)
 echo "** Unzip dataset files"
 for f in CrowdHuman_train01.zip CrowdHuman_train02.zip CrowdHuman_train03.zip CrowdHuman_val.zip ; do
