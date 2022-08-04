@@ -122,6 +122,17 @@ hyp.scratch.tiny.yaml
 
 # Single GPU YOLOv7 training
 # --name: save to project/name
+# p5 (e.g. coco): 
+#   anchors:
+#   - [12,16, 19,36, 40,28]  # P3/8
+#   - [36,75, 76,55, 72,146]  # P4/16
+#   - [142,110, 192,243, 459,401]  # P5/32
+# p6 (e.g. coco): 
+#  anchors:
+#  - [ 19,27,  44,40,  38,94 ]  # P3/8
+#  - [ 96,68,  86,152,  180,137 ]  # P4/16
+#  - [ 140,301,  303,264,  238,542 ]  # P5/32
+#  - [ 436,615,  739,380,  925,792 ]  # P6/64
 $ python train.py \
 --workers 8 \
 --device 0 \
