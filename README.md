@@ -72,3 +72,18 @@ $ cd data
 # {width}x{height}
 $ ./prepare_data.sh 640x384
 ```
+### 2-4. Structure
+```bash
+$ ls -l
+
+total 2040
+drwxr-xr-x 2 vscode vscode 2048000 Aug  4 11:27 crowdhuman-640x480
+-rw-r--r-- 1 vscode vscode     149 Aug  4 11:27 crowdhuman-640x480.data
+-rw-rw-r-- 1 vscode vscode     167 Aug  4 08:24 crowdhuman-template.data
+-rw-rw-r-- 1 vscode vscode      12 Aug  4 11:20 crowdhuman-template.names
+-rw-rw-r-- 1 vscode vscode       5 Aug  4 11:20 crowdhuman.names
+-rw-rw-r-- 1 vscode vscode    5937 Aug  4 10:17 gen_txts.py
+-rwxrwxr-x 1 vscode vscode     909 Aug  4 10:03 prepare_data.sh
+drwxrwxr-x 3 vscode vscode    4096 Aug  4 09:34 raw
+-rw-rw-r-- 1 vscode vscode    1426 Aug  4 08:24 verify_txts.py
+```
