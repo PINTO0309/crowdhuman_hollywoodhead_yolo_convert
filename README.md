@@ -3,17 +3,9 @@ Generates a head-only dataset in COCO format. The labels included in the CrowdHu
 
 ## 1. Advance preparation
 ```bash
-$ pip install -U \
-pip \
-gdown \
-tree \
-numpy==1.23.1 \
-scikit-learn==1.1.1 \
-opencv-python==4.6.0 \
-threadpoolctl==3.1.0 \
---user
 $ git clone https://github.com/PINTO0309/crowdhuman_hollywoodhead_coco_convert.git
 $ cd crowdhuman_hollywoodhead_coco_convert
+$ docker build -t crowdhuman_hollywoodhead_coco_convert .
 ```
 ## 2. CrowdHuman Single to YOLO(COCO/YOLOv7) format
 ### 2-1. Download CrowdHuman Datasets
