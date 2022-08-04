@@ -192,7 +192,7 @@ $ python train.py \
 $ python train.py \
 --workers 8 \
 --device 0 \
---batch-size 32 \
+--batch-size 40 \
 --data data/crowdhuman.yaml \
 --img-size 640 640 \
 --cfg cfg/training/yolov7-tiny_crowdhuman_head.yaml \
