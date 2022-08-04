@@ -130,23 +130,23 @@ $ sed -i -e 's/nc: 80/nc: 1/g' cfg/training/yolov7-tiny_crowdhuman_head.yaml
 
 # change anchors
 $ sed -i -e \
-'s/[12,16, 19,36, 40,28]/[8,9, 14,18, 21,29]/g' \
+'s/\[12,16, 19,36, 40,28\]/\[8,9, 14,18, 21,29\]/g' \
 cfg/training/yolov7_crowdhuman_head.yaml
 $ sed -i -e \
-'s/[36,75, 76,55, 72,146]/[30,42, 42,57, 58,79]/g' \
+'s/\[36,75, 76,55, 72,146\]/\[30,42, 42,57, 58,79\]/g' \
 cfg/training/yolov7_crowdhuman_head.yaml
 $ sed -i -e \
-'s/[142,110, 192,243, 459,401]/[79,113, 115,167, 159,303]/g' \
+'s/\[142,110, 192,243, 459,401\]/\[79,113, 115,167, 159,303\]/g' \
 cfg/training/yolov7_crowdhuman_head.yaml
 
 $ sed -i -e \
-'s/[10,13, 16,30, 33,23]/[8,9, 14,18, 21,29]/g' \
+'s/\[10,13, 16,30, 33,23\]/\[8,9, 14,18, 21,29\]/g' \
 cfg/training/yolov7-tiny_crowdhuman_head.yaml
 $ sed -i -e \
-'s/[30,61, 62,45, 59,119]/[30,42, 42,57, 58,79]/g' \
+'s/\[30,61, 62,45, 59,119\]/\[30,42, 42,57, 58,79\]/g' \
 cfg/training/yolov7-tiny_crowdhuman_head.yaml
 $ sed -i -e \
-'s/[116,90, 156,198, 373,326]/[79,113, 115,167, 159,303]/g' \
+'s/\[116,90, 156,198, 373,326\]/\[79,113, 115,167, 159,303\]/g' \
 cfg/training/yolov7-tiny_crowdhuman_head.yaml
 
 # Single GPU YOLOv7 training
