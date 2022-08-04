@@ -73,7 +73,7 @@ def process(set_='test', annotation_filename='raw/annotation_val.odgt', output_d
     output_dir.mkdir(exist_ok=True)
     jpgs = []
     raw_anno_count = 0
-    print(f'@@@@@@@@@@@@@@@@ Processing Sets: {set_}')
+    print(f'** Processing Sets: {set_}')
     with open(annotation_filename, 'r') as fanno:
         for raw_anno in fanno.readlines():
             anno = json.loads(raw_anno)
@@ -98,11 +98,11 @@ def process(set_='test', annotation_filename='raw/annotation_val.odgt', output_d
                         # line = txt_line(1, obj['fbox'], img_w, img_h)
                         # if line:
                         #     ftxt.write(line)
-                        continue # ignore non-head
+                        pass # ignore non-head
             if line_count > 0:
                 jpgs.append('data/%s/%s.jpg' % (output_dir, ID))
                 raw_anno_count += 1
-    print(f'@@@@@@@@@@@@@@@@ Processed Images: {raw_anno_count}')
+    print(f'** Processed Images: {raw_anno_count}')
     # write the 'data/crowdhuman/train.txt' or 'data/crowdhuman/test.txt'
     set_path = output_dir / ('%s.txt' % set_)
     with open(set_path.as_posix(), 'w') as fset:
@@ -139,14 +139,14 @@ def main():
     process('test', 'raw/annotation_val.odgt', output_dir)
     process('train', 'raw/annotation_train.odgt', output_dir)
 
-    print(f'@@@@@@@@@@@@@@@@ Processing .data')
+    print(f'** Processing .data')
     with open('crowdhuman-%s.data' % args.dim, 'w') as f:
         f.write("""classes = 1
 train   = data/crowdhuman-%s/train.txt
 valid   = data/crowdhuman-%s/test.txt
 names   = data/crowdhuman.names
 backup  = backup/\n""" % (args.dim, args.dim))
-    print(f'@@@@@@@@@@@@@@@@ Processed .data')
+    print(f'** Processed .data')
 
     if DO_KMEANS:
         try:
