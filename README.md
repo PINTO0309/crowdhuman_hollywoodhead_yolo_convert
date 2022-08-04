@@ -93,6 +93,7 @@ $ exit
 ```
 
 ## 5. Train on CrowdHuman Dataset
+### 5-1. Preparation of the environment
 ```bash
 $ cd ..
 $ git clone https://github.com/WongKinYiu/yolov7.git
@@ -100,6 +101,8 @@ $ cd yolov7
 $ git checkout b8956dd5a5bcbb81c92944545ca03390c22a695f
 
 $ mv ../crowdhuman_hollywoodhead_coco_convert/01_crowdhuman2yolo/data/crowdhuman-640x480 data/
+$ cp ../crowdhuman_hollywoodhead_coco_convert/.dockerignore .
+$ cp ../crowdhuman_hollywoodhead_coco_convert/Dockerfile.yolov7 .
 
 $ cat << 'EOT' > data/crowdhuman.yaml
 # path to train.txt or test.txt
@@ -148,6 +151,10 @@ cfg/training/yolov7-tiny_crowdhuman_head.yaml
 $ sed -i -e \
 's/\[116,90, 156,198, 373,326\]/\[79,113, 115,167, 159,303\]/g' \
 cfg/training/yolov7-tiny_crowdhuman_head.yaml
+```
+### 5-2. Training YOLOv7
+```bash
+$ docker build -t yolov7 -f Dockerfile.yolov7 .
 
 # Single GPU YOLOv7 training
 # --name: save to project/name
