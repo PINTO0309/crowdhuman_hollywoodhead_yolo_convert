@@ -12,7 +12,7 @@ cd 01_crowhuman2yolo
 ./crowdhuman_dataset_download.sh
 ```
 ### Structure
-```
+```bash
 $ tree
 .
 ├── crowdhuman_dataset_download.sh
@@ -31,4 +31,8 @@ $ tree
     └── verify_txts.py
 
 2 directories, 12 files
+```
+### Prepare Data
+```bash
+./prepare_data.sh 608x608
 ```
