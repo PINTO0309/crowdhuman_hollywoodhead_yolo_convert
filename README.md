@@ -119,4 +119,28 @@ hyp.scratch.custom.yaml
 hyp.scratch.p5.yaml
 hyp.scratch.p6.yaml
 hyp.scratch.tiny.yaml
+
+# Single GPU YOLOv7 training
+$ python train.py \
+--workers 8 \
+--device 0 \
+--batch-size 32 \
+--data data/crowdhuman.yaml \
+--img 640 480 \
+--cfg cfg/training/yolov7.yaml \
+--weights '' \
+--name yolov7 \
+--hyp data/hyp.scratch.p5.yaml
+
+# Single GPU YOLOv7-tiny training
+$ python train.py \
+--workers 8 \
+--device 0 \
+--batch-size 32 \
+--data data/crowdhuman.yaml \
+--img 640 480 \
+--cfg cfg/training/yolov7-tiny.yaml \
+--weights '' \
+--name yolov7_tiny \
+--hyp data/hyp.scratch.tiny.yaml
 ```
