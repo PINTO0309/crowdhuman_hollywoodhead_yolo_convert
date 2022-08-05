@@ -55,8 +55,8 @@ def main():
                 h_rescaled = lh_scale * h
                 bbox_whs.append((w_rescaled, h_rescaled))
 
-    X = np.array(bbox_whs)
-    kmeans = KMeans(n_clusters=KMEANS_CLUSTERS, random_state=0).fit(X)
+    x = np.array(bbox_whs)
+    kmeans = KMeans(n_clusters=KMEANS_CLUSTERS, random_state=0).fit(x)
     centers = kmeans.cluster_centers_
     centers = centers[centers[:, 0].argsort()]  # sort by bbox w
     print(f'\n** for yolov7-{int(input_width)}x{int(input_height)}, ', end='')
