@@ -72,7 +72,6 @@ def read_a_xml(xml, boxes_wh):
     for obj in root.findall('object'):
         if obj.find('name') is None:
             continue
-        name_class = obj.find('name').text
         bndbox = obj.find('bndbox')
         xmin = int(float(bndbox.find('xmin').text))
         ymin = int(float(bndbox.find('ymin').text))
