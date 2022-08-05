@@ -46,7 +46,6 @@ def image_shape(ID, image_dir):
 
 def txt_line(cls, bbox, img_w, img_h):
     """Generate 1 line in the txt file."""
-    assert INPUT_WIDTH > 0 and INPUT_HEIGHT > 0
     x, y, w, h = bbox
     x = max(int(x), 0)
     y = max(int(y), 0)
@@ -94,15 +93,12 @@ def process(set_='test', annotation_filename='raw/annotation_val.odgt', output_d
                             ftxt.write(line)
                             line_count += 1
                     if 'fbox' in obj.keys():  # full body
-                        # line = txt_line(1, obj['fbox'], img_w, img_h)
-                        # if line:
-                        #     ftxt.write(line)
                         pass # ignore non-head
             if line_count > 0:
                 jpgs.append(f'data/{output_dir}/{ID}.jpg')
                 raw_anno_count += 1
     print(f'** Processed Images: {raw_anno_count}')
-    # write the 'data/crowdhuman/train.txt' or 'data/crowdhuman/test.txt'
+    # write the 'data/crowdhuman-{args.dim}/train.txt' or 'data/crowdhuman-{args.dim}/test.txt'
     set_path = output_dir / (f'{set_}.txt')
     with open(set_path.as_posix(), 'w') as fset:
         for jpg in jpgs:
