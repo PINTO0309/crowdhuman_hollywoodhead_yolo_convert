@@ -376,22 +376,38 @@ Access `http://localhost:6006` from your browser.
 ![image](https://user-images.githubusercontent.com/33194443/182867133-eb21d3fd-e7aa-4235-9450-95d08339ab2d.png)
 
 ## Citation
-```
-@inproceedings{vu15heads,
-    author = {Vu, Tuan{-}Hung and Osokin, Anton and Laptev, Ivan},
-    title = {Context-aware {CNNs} for person head detection},
-    booktitle =  {International Conference on Computer Vision (ICCV)},
-    year = {2015}
-}
-```
-```
-@article{shao2018crowdhuman,
-    title={CrowdHuman: A Benchmark for Detecting Human in a Crowd},
-    author={Shao, Shuai and Zhao, Zijian and Li, Boxun and Xiao, Tete and Yu, Gang and Zhang, Xiangyu and Sun, Jian},
-    journal={arXiv preprint arXiv:1805.00123},
-    year={2018}
-}
-```
+- CrowdHuman Dataset
+    ```
+    @article{shao2018crowdhuman,
+        title={CrowdHuman: A Benchmark for Detecting Human in a Crowd},
+        author={
+            Shao,
+            Shuai and Zhao,
+            Zijian and Li,
+            Boxun and Xiao,
+            Tete and Yu,
+            Gang and Zhang,
+            Xiangyu and Sun,
+            Jian
+        },
+        journal={arXiv preprint arXiv:1805.00123},
+        year={2018}
+    }
+    ```
+
+- Context-aware CNNs for person head detection
+    ```
+    @inproceedings{vu15heads,
+        Author = {Vu, Tuan{-}Hung and Osokin, Anton and Laptev, Ivan},
+        Title = {Context-aware {CNNs} for person head detection},
+        Booktitle = {International Conference on Computer Vision ({ICCV})},
+        Year = {2015}
+    }
+    ```
+  - [aosokin](https://github.com/aosokin)
+  - https://github.com/aosokin/cnn_head_detection
+
+
 - Object Detection Toolkits
   - [kvzhao](https://github.com/kvzhao)
   - https://github.com/kvzhao/detection_toolkits
