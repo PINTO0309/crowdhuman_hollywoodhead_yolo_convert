@@ -375,7 +375,7 @@ Access `http://localhost:6006` from your browser.
 ![image](https://user-images.githubusercontent.com/33194443/182865555-c25939a0-5c64-464e-a3f3-1788e6b856bf.png)
 ![image](https://user-images.githubusercontent.com/33194443/182867133-eb21d3fd-e7aa-4235-9450-95d08339ab2d.png)
 
-## Citation
+## 6. Citation
 - CrowdHuman Dataset
     ```
     @article{shao2018crowdhuman,
