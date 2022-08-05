@@ -1,4 +1,4 @@
-# crowdhuman_hollywoodhead_coco_convert
+# crowdhuman_hollywoodhead_yolo_convert
 Generates a head-only dataset in COCO format. The labels included in the CrowdHuman dataset are Head and FullBody, but ignore FullBody.
 
 ## 1. Advance preparation
