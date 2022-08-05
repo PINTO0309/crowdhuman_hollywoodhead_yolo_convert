@@ -26,7 +26,7 @@ random.shuffle(jpg_names)
 for jpg_name in jpg_names:
     img = cv2.imread(jpg_name)
     img_h, img_w, _ = img.shape
-    txt_name = jpg_name.replace('.jpg', '.txt')
+    txt_name = jpg_name.replace('.jpeg', '.txt')
     with open(txt_name, 'r') as f:
         obj_lines = [l.strip() for l in f.readlines()]
     for obj_line in obj_lines:

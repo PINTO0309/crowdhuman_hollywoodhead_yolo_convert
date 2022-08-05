@@ -27,7 +27,7 @@ done
 echo "** Create the crowdhuman-$1/ subdirectory"
 rm -rf ../crowdhuman-$1/
 mkdir ../crowdhuman-$1/
-ln Images/*.jpg ../crowdhuman-$1/
+find Images -maxdepth 1 -name "*.jpg" -exec ln {} ../crowdhuman-$1/ \;
 
 # the crowdhuman/ subdirectory now contains all train/val jpg images
 

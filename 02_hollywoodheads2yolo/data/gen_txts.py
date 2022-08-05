@@ -122,7 +122,7 @@ def process(set_, split_filename, annopath, output_dir=None):
         image_filename_no_ext = os.path.splitext(os.path.basename(image_filename))[0]
         txt_path = f'{output_dir}/{image_filename_no_ext}.txt'
         line_count = 0
-        with open(txt_path.as_posix(), 'w') as ftxt:
+        with open(txt_path, 'w') as ftxt:
             for box_x1y1wh in info['boxes']:
                 line = txt_line(0, box_x1y1wh, info['image_size'][0], info['image_size'][1])
                 if line:
@@ -134,8 +134,8 @@ def process(set_, split_filename, annopath, output_dir=None):
     print(f'** Processed Images: {raw_anno_count}')
 
     # write the 'data/hollywoodheads-{args.dim}/train.txt' or 'data/hollywoodheads-{args.dim}/test.txt'
-    set_path = output_dir / (f'{set_}.txt')
-    with open(set_path.as_posix(), 'w') as fset:
+    set_path = f'{output_dir}/{set_}.txt'
+    with open(set_path, 'w') as fset:
         for jpg in jpgs:
             fset.write(f'{jpg}\n')
 

@@ -27,10 +27,9 @@ done
 echo "** Create the hollywoodheads-$1/ subdirectory"
 rm -rf ../hollywoodheads-$1/
 mkdir ../hollywoodheads-$1/
-
 find HollywoodHeads/JPEGImages -maxdepth 1 -name "*.jpeg" -exec ln {} ../hollywoodheads-$1/ \;
 
-the hollywoodheads/ subdirectory now contains all train/val jpg images
+# the hollywoodheads/ subdirectory now contains all train/val jpg images
 
 echo "** Generate yolo txt files"
 cd ..
