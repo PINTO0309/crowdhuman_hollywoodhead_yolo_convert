@@ -411,3 +411,15 @@ Access `http://localhost:6006` from your browser.
 - Object Detection Toolkits
   - [kvzhao](https://github.com/kvzhao)
   - https://github.com/kvzhao/detection_toolkits
+
+- YOLOv7
+    ```
+    @article{wang2022yolov7,
+      title={{YOLOv7}: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors},
+      author={Wang, Chien-Yao and Bochkovskiy, Alexey and Liao, Hong-Yuan Mark},
+      journal={arXiv preprint arXiv:2207.02696},
+      year={2022}
+    }
+    ```
+  - [WongKinYiu](https://github.com/WongKinYiu)
+  - https://github.com/WongKinYiu/yolov7
