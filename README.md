@@ -204,6 +204,9 @@ $ cat 02_hollywoodheads2yolo/data/hollywoodheads-640x480/train.txt >> \
 
 $ cat 02_hollywoodheads2yolo/data/hollywoodheads-640x480/test.txt >> \
 01_crowdhuman2yolo/data/crowdhuman-640x480/test.txt
+
+$ sed -i -e 's/hollywoodheads/crowdhuman/g' 01_crowdhuman2yolo/data/crowdhuman-640x480/train.txt
+$ sed -i -e 's/hollywoodheads/crowdhuman/g' 01_crowdhuman2yolo/data/crowdhuman-640x480/test.txt
 ```
 ### 4-3. Calculation of anchor
 ```bash
