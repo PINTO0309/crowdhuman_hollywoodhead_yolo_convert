@@ -335,6 +335,17 @@ $ python train.py \
 --name yolov7 \
 --hyp data/hyp.scratch.p5.yaml
 
+python train.py \
+--workers 12 \
+--device 0 \
+--batch-size 62 \
+--data data/crowdhuman.yaml \
+--img-size 640 640 \
+--cfg cfg/training/yolov7_crowdhuman_head.yaml \
+--weights '' \
+--name yolov7 \
+--hyp data/hyp.scratch.p5.yaml
+
 # Single GPU YOLOv7-tiny training
 # --name: save to project/name
 $ python train.py \
