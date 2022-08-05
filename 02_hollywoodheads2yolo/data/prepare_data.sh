@@ -30,12 +30,12 @@ mkdir ../hollywoodheads-$1/
 
 find HollywoodHeads/JPEGImages -maxdepth 1 -name "*.jpeg" -exec ln {} ../hollywoodheads-$1/ \;
 
-# # the hollywoodheads/ subdirectory now contains all train/val jpg images
+the hollywoodheads/ subdirectory now contains all train/val jpg images
 
-# echo "** Generate yolo txt files"
-# cd ..
-# ${PYTHON} gen_txts.py $1
+echo "** Generate yolo txt files"
+cd ..
+${PYTHON} gen_txts.py $1
 
-# popd > /dev/null
+popd > /dev/null
 
-# echo "** Done."
+echo "** Done."
