@@ -87,7 +87,12 @@ drwxr-xr-x 2 vscode vscode 2048000 Aug  4 11:27 crowdhuman-640x480
 drwxrwxr-x 3 vscode vscode    4096 Aug  4 09:34 raw
 -rw-rw-r-- 1 vscode vscode    1426 Aug  4 08:24 verify_txts.py
 ```
-### 2-5. Exit Docker
+### 2-5. Verify
+```bash
+$ python verify_txts.py 640x480
+```
+![image](https://user-images.githubusercontent.com/33194443/182999724-fcaef730-1b91-4afa-b721-c0e3ffc519af.png)
+### 2-6. Exit Docker
 ```bash
 $ exit
 ```
@@ -144,6 +149,31 @@ anchors = 34,51, 60,90, 88,129, 108,187, 154,232, 159,305, 205,388, 246,284, 310
 $ cd data
 # {width}x{height}
 $ ./prepare_data.sh 640x384
+```
+### 3-4. Structure
+```bash
+$ ls -l
+
+total 17840
+-rw-rw-r-- 1 vscode vscode     6838  8月  5 11:58 gen_txts.py
+-rw-rw-r-- 1 vscode vscode     4057  8月  5 00:33 gen_txts_sample.py
+drwxrwxr-x 2 vscode vscode 18219008  8月  5 12:03 hollywoodheads-640x480
+-rw-rw-r-- 1 vscode vscode      161  8月  5 12:03 hollywoodheads-640x480.data
+-rw-rw-r-- 1 vscode vscode        5  8月  4 20:20 hollywoodheads.names
+-rw-rw-r-- 1 vscode vscode      179  8月  5 00:17 hollywoodheads-template.data
+-rw-rw-r-- 1 vscode vscode        5  8月  5 00:16 hollywoodheads-template.names
+-rwxrwxr-x 1 vscode vscode      880  8月  5 12:40 prepare_data.sh
+drwxrwxr-x 3 vscode vscode     4096  8月  5 11:41 raw
+-rw-rw-r-- 1 vscode vscode     1426  8月  5 12:50 verify_txts.py
+```
+### 3-5. Verify
+```bash
+$ python verify_txts.py 640x480
+```
+![image](https://user-images.githubusercontent.com/33194443/182999308-4be00185-9b00-4d89-81ee-11d58e571c9d.png)
+### 3-6. Exit Docker
+```bash
+$ exit
 ```
 
 ## 5. Train on CrowdHuman Dataset
