@@ -415,7 +415,9 @@ Access `http://localhost:6006` from your browser.
 - YOLOv7
     ```
     @article{wang2022yolov7,
-      title={{YOLOv7}: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors},
+      title={
+        {YOLOv7}: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors
+      },
       author={Wang, Chien-Yao and Bochkovskiy, Alexey and Liao, Hong-Yuan Mark},
       journal={arXiv preprint arXiv:2207.02696},
       year={2022}
