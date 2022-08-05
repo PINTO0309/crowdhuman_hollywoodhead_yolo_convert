@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 """verify_txts.py
 
 For verifying correctness of the generated YOLO txt annotations.

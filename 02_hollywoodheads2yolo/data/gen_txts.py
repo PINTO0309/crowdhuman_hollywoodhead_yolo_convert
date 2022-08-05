@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 """gen_txts.py
 
 To generate YOLO txt files from the original CrowdHuman annotations.

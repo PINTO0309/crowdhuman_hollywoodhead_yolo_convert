@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 """gen_txts.py
 
 To generate YOLO txt files from the original CrowdHuman annotations.
@@ -13,7 +15,6 @@ Outputs:
     * crowdhuman-{width}x{height}/test.txt
     * crowdhuman-{width}x{height}/[IDs].txt (one annotation for each image in the training or test set)
 """
-
 
 import json
 from pathlib import Path
