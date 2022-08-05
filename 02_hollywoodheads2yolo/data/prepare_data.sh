@@ -27,14 +27,15 @@ done
 echo "** Create the hollywoodheads-$1/ subdirectory"
 rm -rf ../hollywoodheads-$1/
 mkdir ../hollywoodheads-$1/
-ln Images/*.jpg ../hollywoodheads-$1/
 
-# the hollywoodheads/ subdirectory now contains all train/val jpg images
+find HollywoodHeads/JPEGImages -maxdepth 1 -name "*.jpeg" -exec ln {} ../hollywoodheads-$1/ \;
 
-echo "** Generate yolo txt files"
-cd ..
-${PYTHON} gen_txts.py $1
+# # the hollywoodheads/ subdirectory now contains all train/val jpg images
 
-popd > /dev/null
+# echo "** Generate yolo txt files"
+# cd ..
+# ${PYTHON} gen_txts.py $1
 
-echo "** Done."
+# popd > /dev/null
+
+# echo "** Done."
