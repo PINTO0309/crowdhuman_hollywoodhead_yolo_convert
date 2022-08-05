@@ -7,7 +7,7 @@ $ git clone https://github.com/PINTO0309/crowdhuman_hollywoodhead_yolo_convert.g
 $ cd crowdhuman_hollywoodhead_yolo_convert
 $ docker build -t crowdhuman_hollywoodhead_yolo_convert -f Dockerfile.prep .
 ```
-## 2. CrowdHuman Single to YOLO(COCO/YOLOv7) format
+## 2. CrowdHuman Single to YOLO(YOLOv7) format
 ### 2-1. Download CrowdHuman Datasets
 ```bash
 $ docker run -it --rm \
@@ -97,7 +97,7 @@ $ python verify_txts.py 640x480
 $ exit
 ```
 
-## 3. HollywoodHeads Single to YOLO(COCO/YOLOv7) format
+## 3. HollywoodHeads Single to YOLO(YOLOv7) format
 ### 3-1. Download HollywoodHeads Datasets
 ```bash
 $ docker run -it --rm \
