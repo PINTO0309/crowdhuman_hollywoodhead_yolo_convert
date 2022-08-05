@@ -213,7 +213,9 @@ $ sed -i -e 's/hollywoodheads/crowdhuman/g' \
 ```
 ### 4-3. Calculation of anchor
 ```bash
-$ python calc_anchor.py
+$ python calc_anchor.py \
+--image_txt_folder_path 01_crowdhuman2yolo/data/crowdhuman-640x480 \
+--dim 640x480
 ```
 ### 4-4. Exit Docker
 ```bash
