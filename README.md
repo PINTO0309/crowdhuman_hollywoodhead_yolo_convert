@@ -115,6 +115,36 @@ $ tree
 
 2 directories, 8 files
 ```
+### 3-3. Prepare Data
+#### 3-3-1. Prepare Data e.g. 4:3
+```bash
+$ cd data
+# {width}x{height}
+$ ./prepare_data.sh 640x480
+
+** Unzip dataset files
+Archive:  HollywoodHeads.zip
+** Processing Sets: test
+** Processed Images: 6676
+** Processing Sets: train
+** Processed Images: 216693
+** Processing .data
+** Processed .data
+
+** for yolov7-640x480,
+resized bbox width/height clusters are:
+(34.76, 51.48) (60.39, 90.79) (88.51, 129.47)
+(108.60, 187.15) (154.80, 232.53) (159.70, 305.63)
+(205.66, 388.56) (246.42, 284.98) (310.29, 409.41)
+anchors = 34,51,  60,90,  88,129,  108,187,  154,232,  159,305,  205,388,  246,284,  310,409
+** Done.
+```
+#### 3-3-2. Prepare Data e.g. 16:9
+```bash
+$ cd data
+# {width}x{height}
+$ ./prepare_data.sh 640x384
+```
 
 ## 5. Train on CrowdHuman Dataset
 ### 5-1. Preparation of the environment
