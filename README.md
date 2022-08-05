@@ -3,16 +3,16 @@ Generates a head-only dataset in COCO format. The labels included in the CrowdHu
 
 ## 1. Advance preparation
 ```bash
-$ git clone https://github.com/PINTO0309/crowdhuman_hollywoodhead_coco_convert.git
-$ cd crowdhuman_hollywoodhead_coco_convert
-$ docker build -t crowdhuman_hollywoodhead_coco_convert -f Dockerfile.prep .
+$ git clone https://github.com/PINTO0309/crowdhuman_hollywoodhead_yolo_convert.git
+$ cd crowdhuman_hollywoodhead_yolo_convert
+$ docker build -t crowdhuman_hollywoodhead_yolo_convert -f Dockerfile.prep .
 ```
 ## 2. CrowdHuman Single to YOLO(COCO/YOLOv7) format
 ### 2-1. Download CrowdHuman Datasets
 ```bash
 $ docker run -it --rm \
 -v `pwd`:/home/vscode \
-crowdhuman_hollywoodhead_coco_convert:latest
+crowdhuman_hollywoodhead_yolo_convert:latest
 
 $ cd 01_crowdhuman2yolo
 $ ./crowdhuman_dataset_download.sh
@@ -248,9 +248,9 @@ $ git clone https://github.com/WongKinYiu/yolov7.git
 $ cd yolov7
 $ git checkout b8956dd5a5bcbb81c92944545ca03390c22a695f
 
-$ mv ../crowdhuman_hollywoodhead_coco_convert/01_crowdhuman2yolo/data/crowdhuman-640x480 data/
-$ cp ../crowdhuman_hollywoodhead_coco_convert/.dockerignore .
-$ cp ../crowdhuman_hollywoodhead_coco_convert/Dockerfile.yolov7 .
+$ mv ../crowdhuman_hollywoodhead_yolo_convert/01_crowdhuman2yolo/data/crowdhuman-640x480 data/
+$ cp ../crowdhuman_hollywoodhead_yolo_convert/.dockerignore .
+$ cp ../crowdhuman_hollywoodhead_yolo_convert/Dockerfile.yolov7 .
 
 $ cat << 'EOT' > data/crowdhuman.yaml
 # path to train.txt or test.txt
