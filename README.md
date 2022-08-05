@@ -216,6 +216,24 @@ $ sed -i -e 's/hollywoodheads/crowdhuman/g' \
 $ python calc_anchor.py \
 --image_txt_folder_path 01_crowdhuman2yolo/data/crowdhuman-640x480 \
 --dim 640x480
+
+** image files sorting...
+** sorted_image_files count: 242808
+** image files sort done
+** txt files sorting...
+** sorted_txt_files count: 242808
+** txt files sort done
+** anchor calculating...
+100%|█████████████████████████████████████████| 242808/242808 [00:04<00:00, 51255.10it/s]
+** anchor calculation done
+
+** for yolov7-640x480,
+resized bbox width/height clusters are:
+(13.04, 17.13) (36.53, 51.66) (65.15, 96.20)
+(94.95, 149.07) (132.95, 208.64) (157.31, 284.76)
+(195.28, 379.18) (244.24, 282.09) (303.92, 407.06)
+
+anchors = 13,17, 36,51, 65,96, 94,149, 132,208, 157,284, 195,379, 244,282, 303,407
 ```
 ### 4-4. Exit Docker
 ```bash
