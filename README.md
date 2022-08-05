@@ -176,6 +176,29 @@ $ python verify_txts.py 640x480
 $ exit
 ```
 
+## 4. (Optional) CrowdHuman and HollywoodHeads marge
+### 4-1. image / txt marge
+```bash
+# JPEG
+$ find 02_hollywoodheads2yolo/data/hollywoodheads-640x480 \
+-name "mov_*.jpeg" -print0 \
+| xargs -0 -I {} cp {} 01_crowdhuman2yolo/data/crowdhuman-640x480
+
+# TXT
+$ find 02_hollywoodheads2yolo/data/hollywoodheads-640x480 \
+-name "mov_*.txt" -print0 \
+| xargs -0 -I {} cp {} 01_crowdhuman2yolo/data/crowdhuman-640x480
+```
+### 4-2. train.txt / test.txt marge
+```bash
+$ cat 02_hollywoodheads2yolo/data/hollywoodheads-640x480/train.txt >> \
+01_crowdhuman2yolo/data/crowdhuman-640x480/train.txt
+
+$ cat 02_hollywoodheads2yolo/data/hollywoodheads-640x480/test.txt >> \
+01_crowdhuman2yolo/data/crowdhuman-640x480/test.txt
+```
+
+
 ## 5. Train on CrowdHuman Dataset
 ### 5-1. Preparation of the environment
 ```bash
