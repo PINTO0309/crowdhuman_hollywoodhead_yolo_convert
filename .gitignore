@@ -2,6 +2,9 @@
 *.zip
 *.odgt
 .bash_history
+.python_history
+.cache/
+.local/
 crowdhuman-*x*/
 01_crowdhuman2yolo/data/raw/Images/
 crowdhuman-*x*.data

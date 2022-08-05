@@ -1,3 +1,9 @@
 01_crowdhuman2yolo
+02_hollywoodheads2yolo
+.cache
+.local
+.vscode
+.python_history
+.bash_history
 data/
 runs/

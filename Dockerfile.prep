@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
     && apt-get install -y \
         nano python3-pip curl zip unzip sudo tree libgl1-mesa-dev \
-        libglib2.0-0 \
+        libglib2.0-0 python-is-python3 \
     && sed -i 's/# set linenumbers/set linenumbers/g' /etc/nanorc \
     && apt clean \
     && rm -rf /var/lib/apt/lists/*
@@ -17,7 +17,8 @@ RUN pip3 install -U pip && \
     numpy==1.23.1 \
     scikit-learn==1.1.1 \
     opencv-python==4.6.0.66 \
-    threadpoolctl==3.1.0
+    threadpoolctl==3.1.0 \
+    natsort==8.1.0
 
 ENV USERNAME=vscode
 RUN echo "root:root" | chpasswd \
