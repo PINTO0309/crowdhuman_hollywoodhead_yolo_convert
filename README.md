@@ -204,10 +204,36 @@ $ cat 02_hollywoodheads2yolo/data/hollywoodheads-640x480/train.txt >> \
 
 $ cat 02_hollywoodheads2yolo/data/hollywoodheads-640x480/test.txt >> \
 01_crowdhuman2yolo/data/crowdhuman-640x480/test.txt
+
+$ sed -i -e 's/hollywoodheads/crowdhuman/g' \
+01_crowdhuman2yolo/data/crowdhuman-640x480/train.txt
+
+$ sed -i -e 's/hollywoodheads/crowdhuman/g' \
+01_crowdhuman2yolo/data/crowdhuman-640x480/test.txt
 ```
 ### 4-3. Calculation of anchor
 ```bash
-$ python calc_anchor.py
+$ python calc_anchor.py \
+--image_txt_folder_path 01_crowdhuman2yolo/data/crowdhuman-640x480 \
+--dim 640x480
+
+** image files sorting...
+** sorted_image_files count: 242808
+** image files sort done
+** txt files sorting...
+** sorted_txt_files count: 242808
+** txt files sort done
+** anchor calculating...
+100%|█████████████████████████████████████████| 242808/242808 [00:04<00:00, 51255.10it/s]
+** anchor calculation done
+
+** for yolov7-640x480,
+resized bbox width/height clusters are:
+(13.04, 17.13) (36.53, 51.66) (65.15, 96.20)
+(94.95, 149.07) (132.95, 208.64) (157.31, 284.76)
+(195.28, 379.18) (244.24, 282.09) (303.92, 407.06)
+
+anchors = 13,17, 36,51, 65,96, 94,149, 132,208, 157,284, 195,379, 244,282, 303,407
 ```
 ### 4-4. Exit Docker
 ```bash
@@ -255,23 +281,23 @@ $ sed -i -e 's/nc: 80/nc: 1/g' cfg/training/yolov7-tiny_crowdhuman_head.yaml
 
 # change anchors
 $ sed -i -e \
-'s/\[12,16, 19,36, 40,28\]/\[8,9, 14,18, 21,29\]/g' \
+'s/\[12,16, 19,36, 40,28\]/\[13,17, 36,51, 65,96\]/g' \
 cfg/training/yolov7_crowdhuman_head.yaml
 $ sed -i -e \
-'s/\[36,75, 76,55, 72,146\]/\[30,42, 42,57, 58,79\]/g' \
+'s/\[36,75, 76,55, 72,146\]/\[94,149, 132,208, 157,284\]/g' \
 cfg/training/yolov7_crowdhuman_head.yaml
 $ sed -i -e \
-'s/\[142,110, 192,243, 459,401\]/\[79,113, 115,167, 159,303\]/g' \
+'s/\[142,110, 192,243, 459,401\]/\[195,379, 244,282, 303,407\]/g' \
 cfg/training/yolov7_crowdhuman_head.yaml
 
 $ sed -i -e \
-'s/\[10,13, 16,30, 33,23\]/\[8,9, 14,18, 21,29\]/g' \
+'s/\[10,13, 16,30, 33,23\]/\[13,17, 36,51, 65,96\]/g' \
 cfg/training/yolov7-tiny_crowdhuman_head.yaml
 $ sed -i -e \
-'s/\[30,61, 62,45, 59,119\]/\[30,42, 42,57, 58,79\]/g' \
+'s/\[30,61, 62,45, 59,119\]/\[94,149, 132,208, 157,284\]/g' \
 cfg/training/yolov7-tiny_crowdhuman_head.yaml
 $ sed -i -e \
-'s/\[116,90, 156,198, 373,326\]/\[79,113, 115,167, 159,303\]/g' \
+'s/\[116,90, 156,198, 373,326\]/\[195,379, 244,282, 303,407\]/g' \
 cfg/training/yolov7-tiny_crowdhuman_head.yaml
 
 $ docker build -t yolov7 -f Dockerfile.yolov7 .
