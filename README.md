@@ -6,14 +6,14 @@ Generates a head-only dataset in COCO format. The labels included in the CrowdHu
 $ git clone https://github.com/PINTO0309/crowdhuman_hollywoodhead_coco_convert.git
 $ cd crowdhuman_hollywoodhead_coco_convert
 $ docker build -t crowdhuman_hollywoodhead_coco_convert -f Dockerfile.prep .
-
-$ docker run -it --rm \
--v `pwd`:/home/vscode \
-crowdhuman_hollywoodhead_coco_convert:latest
 ```
 ## 2. CrowdHuman Single to YOLO(COCO/YOLOv7) format
 ### 2-1. Download CrowdHuman Datasets
 ```bash
+$ docker run -it --rm \
+-v `pwd`:/home/vscode \
+crowdhuman_hollywoodhead_coco_convert:latest
+
 $ cd 01_crowdhuman2yolo
 $ ./crowdhuman_dataset_download.sh
 ```
@@ -100,6 +100,10 @@ $ exit
 ## 3. HollywoodHeads Single to YOLO(COCO/YOLOv7) format
 ### 3-1. Download HollywoodHeads Datasets
 ```bash
+$ docker run -it --rm \
+-v `pwd`:/home/vscode \
+crowdhuman_hollywoodhead_coco_convert:latest
+
 $ cd 02_hollywoodheads2yolo
 $ ./hollywoodheads_dataset_download.sh
 ```
@@ -172,6 +176,40 @@ $ python verify_txts.py 640x480
 ```
 ![image](https://user-images.githubusercontent.com/33194443/182999308-4be00185-9b00-4d89-81ee-11d58e571c9d.png)
 ### 3-6. Exit Docker
+```bash
+$ exit
+```
+
+## 4. (Optional) CrowdHuman and HollywoodHeads marge
+### 4-1. image / txt marge
+```bash
+$ docker run -it --rm \
+-v `pwd`:/home/vscode \
+crowdhuman_hollywoodhead_coco_convert:latest
+
+# JPEG
+$ find 02_hollywoodheads2yolo/data/hollywoodheads-640x480 \
+-name "mov_*.jpeg" -print0 \
+| xargs -0 -I {} cp {} 01_crowdhuman2yolo/data/crowdhuman-640x480
+
+# TXT
+$ find 02_hollywoodheads2yolo/data/hollywoodheads-640x480 \
+-name "mov_*.txt" -print0 \
+| xargs -0 -I {} cp {} 01_crowdhuman2yolo/data/crowdhuman-640x480
+```
+### 4-2. train.txt / test.txt marge
+```bash
+$ cat 02_hollywoodheads2yolo/data/hollywoodheads-640x480/train.txt >> \
+01_crowdhuman2yolo/data/crowdhuman-640x480/train.txt
+
+$ cat 02_hollywoodheads2yolo/data/hollywoodheads-640x480/test.txt >> \
+01_crowdhuman2yolo/data/crowdhuman-640x480/test.txt
+```
+### 4-3. Calculation of anchor
+```bash
+$ python calc_anchor.py
+```
+### 4-4. Exit Docker
 ```bash
 $ exit
 ```
