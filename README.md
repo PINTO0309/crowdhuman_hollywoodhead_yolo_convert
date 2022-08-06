@@ -358,6 +358,17 @@ $ python train.py \
 --weights '' \
 --name yolov7_tiny \
 --hyp data/hyp.scratch.tiny.yaml
+
+python train.py \
+--workers 12 \
+--device 0 \
+--batch-size 300 \
+--data data/crowdhuman.yaml \
+--img-size 640 640 \
+--cfg cfg/training/yolov7-tiny_crowdhuman_head.yaml \
+--weights '' \
+--name yolov7_tiny \
+--hyp data/hyp.scratch.tiny.yaml
 ```
 ### 5-3. Tensorboard
 Start a different terminal from the one in which you are running the training and execute the following commands.
