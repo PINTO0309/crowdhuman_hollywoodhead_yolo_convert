@@ -425,7 +425,50 @@ Access `http://localhost:6006` from your browser.
 - YOLOv7-tiny
   ![image](https://user-images.githubusercontent.com/33194443/183258218-a38fcbee-c9cf-453c-905d-8deac990a1fb.png)
 
-## 8. Citation
+## 8. Benchmark
+- YOLOv7-tiny_Head with Post-Process, ONNX TensorRT, RTX3070
+  ```bash
+  $ sit4onnx --input_onnx_file_path yolov7_tiny_head_0.752_post_480x640.onnx
+
+  INFO: file: yolov7_tiny_head_0.752_post_480x640.onnx
+  INFO: providers: ['TensorrtExecutionProvider', 'CPUExecutionProvider']
+  INFO: input_name.1: input shape: [1, 3, 480, 640] dtype: float32
+  INFO: test_loop_count: 10
+  INFO: total elapsed time:  13.000011444091797 ms
+  INFO: avg elapsed time per pred:  1.3000011444091797 ms
+  INFO: output_name.1: score shape: [0, 1] dtype: float32
+  INFO: output_name.2: batchno_classid_x1y1x2y2 shape: [0, 6] dtype: int64
+  ```
+
+- YOLOv7-tiny_Head with Post-Process Float16, ONNX CUDA, RTX3070
+  ```bash
+  $ sit4onnx --input_onnx_file_path yolov7_tiny_head_0.752_post_480x640.onnx --onnx_execution_provider cuda
+
+  INFO: file: yolov7_tiny_head_0.752_post_480x640.onnx
+  INFO: providers: ['CUDAExecutionProvider', 'CPUExecutionProvider']
+  INFO: input_name.1: input shape: [1, 3, 480, 640] dtype: float32
+  INFO: test_loop_count: 10
+  INFO: total elapsed time:  35.124778747558594 ms
+  INFO: avg elapsed time per pred:  3.5124778747558594 ms
+  INFO: output_name.1: score shape: [0, 1] dtype: float32
+  INFO: output_name.2: batchno_classid_x1y1x2y2 shape: [0, 6] dtype: int64
+  ```
+
+- YOLOv7-tiny_Head with Post-Process Float32, ONNX CPU, Corei9 Gen.10
+  ```bash
+  $ sit4onnx --input_onnx_file_path yolov7_tiny_head_0.752_post_480x640.onnx --onnx_execution_provider cpu
+  
+  INFO: file: yolov7_tiny_head_0.752_post_480x640.onnx
+  INFO: providers: ['CPUExecutionProvider']
+  INFO: input_name.1: input shape: [1, 3, 480, 640] dtype: float32
+  INFO: test_loop_count: 10
+  INFO: total elapsed time:  178.92169952392578 ms
+  INFO: avg elapsed time per pred:  17.892169952392578 ms
+  INFO: output_name.1: score shape: [0, 1] dtype: float32
+  INFO: output_name.2: batchno_classid_x1y1x2y2 shape: [0, 6] dtype: int64
+  ```
+
+## 9. Citation
 - CrowdHuman Dataset
     ```
     @article{shao2018crowdhuman,
@@ -466,7 +509,7 @@ Access `http://localhost:6006` from your browser.
   - [zhangda1018](https://github.com/zhangda1018)
   - https://github.com/zhangda1018/yolov5-crowdhuman
 
-## 9. References
+## 10. References
 - YOLOv7
     ```
     @article{wang2022yolov7,
