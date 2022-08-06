@@ -441,3 +441,7 @@ Access `http://localhost:6006` from your browser.
     ```
   - [WongKinYiu](https://github.com/WongKinYiu)
   - https://github.com/WongKinYiu/yolov7
+
+- PINTO_model_zoo
+
+  https://github.com/PINTO0309/PINTO_model_zoo/tree/main/323_YOLOv7_Head
