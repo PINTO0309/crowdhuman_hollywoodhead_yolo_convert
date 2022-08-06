@@ -423,6 +423,7 @@ Access `http://localhost:6006` from your browser.
   - [kvzhao](https://github.com/kvzhao)
   - https://github.com/kvzhao/detection_toolkits
 
+## 7. References
 - YOLOv7
     ```
     @article{wang2022yolov7,
