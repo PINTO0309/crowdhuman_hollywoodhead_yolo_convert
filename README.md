@@ -386,11 +386,43 @@ Access `http://localhost:6006` from your browser.
 ![image](https://user-images.githubusercontent.com/33194443/182865555-c25939a0-5c64-464e-a3f3-1788e6b856bf.png)
 ![image](https://user-images.githubusercontent.com/33194443/182867133-eb21d3fd-e7aa-4235-9450-95d08339ab2d.png)
 
-## 6. Results
+## 6. TXT format
+- 273271,1a0d6000b9e1f5b7.txt
+  - `classid` `center_x` `center_y` `w` `h`
+  - `center_x`, `center_y`, `w`, and `h` are scale conversions.
+  - `classid` = `0` = `Head`
+  - `Head` ≠ `Face`
+    ```
+    0 0.971191 0.455485 0.057617 0.087440
+    0 0.791504 0.392687 0.047852 0.089030
+    0 0.656738 0.302862 0.045898 0.093800
+    0 0.461914 0.294913 0.052734 0.087440
+    0 0.588867 0.222576 0.050781 0.111288
+    0 0.372559 0.252782 0.041992 0.095390
+    0 0.249512 0.317170 0.063477 0.093800
+    0 0.130371 0.193959 0.043945 0.085851
+    0 0.235840 0.218601 0.057617 0.087440
+    0 0.028320 0.310811 0.056641 0.100159
+    0 0.364258 0.149444 0.042969 0.098569
+    0 0.356445 0.031002 0.035156 0.062003
+    0 0.484375 0.108903 0.039062 0.093800
+    0 0.560547 0.032591 0.046875 0.065183
+    0 0.708008 0.137520 0.050781 0.100159
+    0 0.835938 0.216216 0.050781 0.079491
+    0 0.938477 0.033386 0.041016 0.066773
+    0 0.862305 0.020668 0.029297 0.041335
+    0 0.829590 0.029412 0.036133 0.058824
+    0 0.734375 0.024642 0.035156 0.049285
+    0 0.684082 0.100954 0.038086 0.077901
+    0 0.660645 0.054849 0.036133 0.071542
+    0 0.541504 0.022258 0.030273 0.044515
+    ```
+
+## 7. Results
 - YOLOv7
   ![test_batch2_pred](https://user-images.githubusercontent.com/33194443/183232860-aacf8ad4-f492-45d2-be27-19b7390f9378.jpg)
 
-## 7. Citation
+## 8. Citation
 - CrowdHuman Dataset
     ```
     @article{shao2018crowdhuman,
@@ -427,7 +459,7 @@ Access `http://localhost:6006` from your browser.
   - [kvzhao](https://github.com/kvzhao)
   - https://github.com/kvzhao/detection_toolkits
 
-## 8. References
+## 9. References
 - YOLOv7
     ```
     @article{wang2022yolov7,
