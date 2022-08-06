@@ -420,7 +420,10 @@ Access `http://localhost:6006` from your browser.
 
 ## 7. Results
 - YOLOv7
-  ![test_batch2_pred](https://user-images.githubusercontent.com/33194443/183232860-aacf8ad4-f492-45d2-be27-19b7390f9378.jpg)
+  ![image](https://user-images.githubusercontent.com/33194443/183258227-8a966dfa-0606-4403-b003-22da2ff10813.png)
+
+- YOLOv7-tiny
+  ![image](https://user-images.githubusercontent.com/33194443/183258218-a38fcbee-c9cf-453c-905d-8deac990a1fb.png)
 
 ## 8. Citation
 - CrowdHuman Dataset
