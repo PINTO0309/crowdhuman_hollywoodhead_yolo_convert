@@ -459,6 +459,10 @@ Access `http://localhost:6006` from your browser.
   - [kvzhao](https://github.com/kvzhao)
   - https://github.com/kvzhao/detection_toolkits
 
+- yolov5-crowdhuman
+  - [zhangda1018](https://github.com/zhangda1018)
+  - https://github.com/zhangda1018/yolov5-crowdhuman
+
 ## 9. References
 - YOLOv7
     ```
