@@ -428,7 +428,8 @@ Access `http://localhost:6006` from your browser.
 ## 8. Benchmark
 - YOLOv7-tiny_Head with Post-Process, ONNX TensorRT, RTX3070
   ```bash
-  $ sit4onnx --input_onnx_file_path yolov7_tiny_head_0.752_post_480x640.onnx
+  $ sit4onnx \
+  --input_onnx_file_path yolov7_tiny_head_0.752_post_480x640.onnx
 
   INFO: file: yolov7_tiny_head_0.752_post_480x640.onnx
   INFO: providers: ['TensorrtExecutionProvider', 'CPUExecutionProvider']
@@ -442,7 +443,9 @@ Access `http://localhost:6006` from your browser.
 
 - YOLOv7-tiny_Head with Post-Process Float16, ONNX CUDA, RTX3070
   ```bash
-  $ sit4onnx --input_onnx_file_path yolov7_tiny_head_0.752_post_480x640.onnx --onnx_execution_provider cuda
+  $ sit4onnx \
+  --input_onnx_file_path yolov7_tiny_head_0.752_post_480x640.onnx \
+  --onnx_execution_provider cuda
 
   INFO: file: yolov7_tiny_head_0.752_post_480x640.onnx
   INFO: providers: ['CUDAExecutionProvider', 'CPUExecutionProvider']
@@ -456,7 +459,9 @@ Access `http://localhost:6006` from your browser.
 
 - YOLOv7-tiny_Head with Post-Process Float32, ONNX CPU, Corei9 Gen.10
   ```bash
-  $ sit4onnx --input_onnx_file_path yolov7_tiny_head_0.752_post_480x640.onnx --onnx_execution_provider cpu
+  $ sit4onnx \
+  --input_onnx_file_path yolov7_tiny_head_0.752_post_480x640.onnx \
+  --onnx_execution_provider cpu
   
   INFO: file: yolov7_tiny_head_0.752_post_480x640.onnx
   INFO: providers: ['CPUExecutionProvider']
