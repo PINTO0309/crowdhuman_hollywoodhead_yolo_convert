@@ -102,7 +102,7 @@ $ exit
 ```bash
 $ docker run -it --rm \
 -v `pwd`:/home/vscode \
-crowdhuman_hollywoodhead_coco_convert:latest
+crowdhuman_hollywoodhead_yolo_convert:latest
 
 $ cd 02_hollywoodheads2yolo
 $ ./hollywoodheads_dataset_download.sh
@@ -185,7 +185,7 @@ $ exit
 ```bash
 $ docker run -it --rm \
 -v `pwd`:/home/vscode \
-crowdhuman_hollywoodhead_coco_convert:latest
+crowdhuman_hollywoodhead_yolo_convert:latest
 
 # JPEG
 $ find 02_hollywoodheads2yolo/data/hollywoodheads-640x480 \
