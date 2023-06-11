@@ -180,7 +180,7 @@ $ python verify_txts.py 640x480
 $ exit
 ```
 
-## 4. (Optional) CrowdHuman and HollywoodHeads marge
+## 4. (Optional) CrowdHuman and HollywoodHeads mrge
 ### 4-1. image / txt marge
 ```bash
 $ docker run -it --rm \
